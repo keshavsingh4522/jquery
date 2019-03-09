@@ -1,0 +1,26 @@
+@charset "utf-8";
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.cont,.mh,.sw
+{
+	display: inline-block;
+	margin: 10px;
+	width:400px;
+	height: auto;
+	border: 1px solid black;
+	box-shadow: 0 0 12px #ddd;
+	text-align: center;
+	font-family: sans-serif;
+	color: purple;
+}
+img
+{
+	width:180px;
+	height: 200px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 12px;
+}
