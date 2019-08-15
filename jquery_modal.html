@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../js/jquery.js"></script>
+	<style type="text/css">
+		#blur-bg
+		{
+			/*display: none;*/
+			width: 100%;
+			min-height: 100%;
+			background-color: rgba(0,0,0,0.8);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#modal
+		{
+			/*display: none;*/
+			width: 400px;
+			height: 400px;
+			position: absolute;
+			background-color: white;
+			left:30%;
+			top:-800px;
+		}	
+	</style>
+</head>
+<body>
+	<h1>welcome to my page</h1>
+	<button>login</button>
+	<!-- start modal -->
+<div id="blur-bg">
+</div>
+<div id="modal">
+	<p style="color: red;float: right;padding:14px;padding-top: 2px;cursor: pointer;" id="close">X</p>
+</div>
+<!-- end modal -->
+<script>
+	$(document).ready(function(){
+		// $("body").css('background-color','#848747');
+		// $("button").click(function(){
+		// 	$("#blur-bg").toggle(1000,function(){
+		// 		$("#modal").toggle(1000);
+		// 	});
+		// });
+		$("#modal").animate({"top":'100px'},1000);
+		$("#blur-bg").click(function(){
+			$("#modal").animate({'top':'-800px'},1000);
+			$(this).fadeOut(1000);
+		});
+		$("#close").click(function(){
+			$("#modal").animate({'top':'-800px'},1000);
+			$("#blur-bg").fadeOut(1000);
+		});
+	});
+</script>
+</body>
+</html>
