@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		.header_text
+		{
+			text-align: center;
+		}
+		.select_email
+		{
+			list-style: none;
+		}
+		.select_email li
+		{
+			width: 250px;
+			height: 40px;
+			box-shadow: 0px 0px 1px 1px black;
+			margin-bottom: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 5px; 
+		}
+		button
+		{
+			border: 1px solid black;
+			height: 40px;
+			border-radius: 5px;
+			cursor: pointer;
+			outline: none;
+		}
+		button:focus
+		{
+			color: white;
+			background-color: blue;
+		}
+		.restore_btn,#btn
+		{
+			display: none;
+		}
+		.delete,.undo
+		{
+			border:1px solid black;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			text-align:center;
+			display:inline-flex;
+			justify-content:center;
+			align-items:center;
+		}
+		/*predeifined function*/
+		.ui-selected
+		{
+			background-color: yellow;
+		}
+		.ui-selecting
+		{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="header_text animated bounceIn">Selectable Content</h1>
+	<marquee classs="mar">Keshav Singh</marquee>
+	<center>
+		<button class="s-mode">Selected Mode</button>
+		<button class="d-mode">Draggable Mode</button>
+		<p id="uses"></p>
+	</center>
+	<ul class="select_email">
+		<li>keshavsingh4522@gmail.com</li>
+		<li>keshavsingh3197@gmail.com</li>
+		<li>keshavdev4522@gmail.com</li>
+		<li>keshavsingh.cse21@jecrc.com.in</li>
+		<li>keshavsingh4522@yahoo.com</li>
+	</ul>
+	<center>
+		<button id="btn">select content to perform task</button>
+		<button class="restore_btn">Restore deleted item</button>
+		<i class="delete fa fa-4x fa-trash" aria-hidden="true" style="display: none;"></i>
+		<i class="undo fa fa-4x fa-undo" aria-hidden="true" style="display: none;"></i>
+		<p id="restored"></p>
+	</center>
+<script>
+	/*__________S-MODE__________*/
+	$(document).ready(function(){
+		$(".s-mode").click(function(){
+			// $(this).css('background-color','blue');
+			$(".delete").fadeOut();
+			$('#btn').delay(500).fadeIn(500);
+			$('#uses').html('select content and click on delete').delay(1000).fadeOut(1000);
+			var count=0;
+		var selected='';
+		var txtbtn=$("#btn").html();
+		$(".select_email").selectable({
+			/*
+			*selecting
+			*unselecting
+			*selected
+			*unselected
+			*stop
+			*/
+			selected:function(event,ui){
+				$("#btn").html('Delete');
+			},
+			unselected:function(event,ui){
+				$("#btn").html(txtbtn);
+			},
+			stop:function(event,ui){
+				$('#btn').click(function(){
+				    count+=$(".ui-selected").length;
+				    var record=$(".ui-selected");
+					$(".ui-selected").remove();
+					$(this).html(count+' items deleted');
+					$(".restore_btn").fadeIn(500);
+					$(this).addClass('animated bounceIn');
+					$(".restore_btn").click(function(){
+						$(".select_email").append(record);
+						$(this).fadeOut(500,function(){
+							$("#restored").html($('.ui-selected').length+' items restored').delay(1000).fadeOut(function(){
+								location.reload();
+							});
+							count=0;
+						});
+					});
+				});
+				$('#btn').removeClass('animated bounceIn');
+			},
+		});
+		});
+	});
+	/*__________D-MODE__________*/
+	$(document).ready(function(){
+		$(".d-mode").click(function(){
+			$("#btn").fadeOut();
+			$('#uses').html('Drag item to delete').delay(1000).fadeOut(1000);
+			$(".delete").delay(500).fadeIn(500);
+			// draggable
+			$('.select_email li').draggable({
+				revert:'invalid',
+				helper:function(event,ui){
+					return $('<i class="fa fa-4x fa-trash" aria-hidden="true" style="border:1px solid black;border-radius:50%;width:100px;height:100px;text-align:center;display:flex;justify-content:center;align-items:center;"></i>');
+				},
+				cursorAt:{top:42,left:32},
+			});
+			// droppable
+			var record;
+			var count=0;
+			$('.delete').droppable({
+				drop:function(event,ui){
+					count+=ui.draggable.length;
+					$(ui.draggable).remove();
+					$('.undo').fadeIn(1000);
+					$(".undo").click(function(){
+						$('.select_email').append($(ui.draggable));
+						$(this).fadeOut(1000,function(){
+							$('#restored').html(count+' items restored').delay(500).fadeOut(1000,function(){
+								location.reload();
+							});
+						});
+					});
+				},
+			});
+		});
+	});
+</script>
+</body>
+</html>
