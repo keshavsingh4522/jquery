@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		._box
+		{
+			width: 100px;
+			height: 100px;
+			background-color: #343454;
+		}
+		.box,.box_1,.box_2
+		{
+			width: 200px;
+			height: 200px;
+			background-color: #ddd;
+			margin:100px 100px;
+			float: left;
+		}
+		/*predifined class*/
+		.ui-resizable-helper
+		{
+			border:1px dotted red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+	<div class="_box">
+		
+	</div>
+	</div>
+	<!-- for start resize stop -->
+	<div class="box_1">
+	</div>
+	<div class="box_2">
+	</div>
+
+<script>
+	$(document).ready(function(){
+		$("._box").resizable({
+			animate:true,
+			aspectRatio:true,
+			containment:'parent',
+			// helper:'ui-resizable-helper',
+			maxWidth:180,
+			minWidth:40,
+			minHeight:40,
+			maxHeight:180,
+			grid:20,
+			alsoResize:'parent'
+		});
+		// $(".box").resizable({
+		// 	aspectRatio:true,
+		// });
+	});
+
+	// start resize stop
+	$(".box_1").resizable({
+		alsoResize:'.box_2',
+		start:function(event,ui){
+			$(".box_2").css({'color':'green','border':'1px solid rgba(0,0,0,0.2)'});
+			$(this).css({'background-color':'red'});
+			$('.box').html('in initial state width of box_2: '+ui.size.width)// $(this).width()
+		},
+		resize:function(event,ui){
+			$(this).css({'background-color':'yellow'});
+			$('.box_2').html('in resizing state width of box_2: '+$(this).width())
+
+		},
+		stop:function(event,ui){
+			$('.box_2').append('<br>in final state width of box_2: '+ui.size.width)//$(this).width()
+			$(this).css({'background-color':'blue'});
+		},
+	});
+</script>
+</body>
+</html>
