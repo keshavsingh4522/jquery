@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		input[type='search']
+		{
+			outline: none;
+			width: 250px;
+			height: 30px;
+			text-align: center;
+			color: violet;
+			box-shadow: 0px 0px 5px 2px black;
+			border-radius: 21px;
+		}
+		input[type='search']::placeholder
+		{
+			color: green;
+			font-size: 15px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+<!-- <form>
+	<h1>search content</h1>
+	<input type="search" name="search" placeholder="search this site">
+</form> -->
+<button>click here</button>
+<!-- form -->
+<form>
+<h1>Gender</h1>
+<input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">female
+<button type="submit">send</button>
+</form>
+<!-- end form -->
+<!-- cse -->
+<div class="gcse-search"></div>
+<script async src="https://cse.google.com/cse.js?cx=011703449471851565671:dq87shvfg2u"></script>
+<!-- cse -->
+<script>
+	$(document).ready(function(){
+		var tags=['web design','web developer','app developer','designer','github','programmer'];
+		$("input[type='search']").autocomplete({
+			source:tags,
+		});
+
+		$('button').button({
+			icon:'ui-icon-extlink',
+			iconPosition:'bottom',
+		});
+
+	});
+</script>
+
+</body>
+</html>
