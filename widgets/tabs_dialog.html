@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<!-- tab -->
+	<div id="menu">
+	<ul>
+		<li><a href="#home">Home</a></li>
+		<li><a href="#image">Image</a></li>
+		<li><a href="#video">Video</a></li>
+	</ul>
+	<div id="home">
+		<p>welcome to home page</p>
+	</div>
+	<div id="image">
+		<p>welcome to image page</p>
+	</div>
+	<div id="video">
+		<p>welcome to video page</p>
+	</div>
+</div>
+	<!-- dialog box -->
+	<div id="diaglog">
+	<h1>welcome</h1>
+	<p>docmrrr</p>
+</div>
+<script>
+	$(document).ready(function(){
+	$('#diaglog').dialog();	
+	$("#menu").tabs({
+		collapsible:true,
+		active:1,
+		event:'mouseover',
+		hide:{
+			effect:'bounce',
+			duration:1000,
+		}
+	});
+	});
+</script>
+
+</body>
+</html>
