@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		ul
+		{
+			list-style: none;
+			float: left;
+		}
+		li
+		{
+			width: 250px;
+			height: 40px;
+			box-shadow: 0px 0px 1px 1px black;
+			margin-bottom: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 5px;
+		}
+		.select_email_2 li
+		{
+			background-color: purple;
+			color: white;
+		}
+		.shadow_1
+		{
+			background-color: violet;
+		}
+		.shadow_2
+		{
+			background-color: cyan;
+		}
+	</style>
+</head>
+<body>
+	<ul class="select_email">
+		<li>keshavsingh4522@gmail.com</li>
+		<li>keshavsingh3197@gmail.com</li>
+		<li class="demo">keshavdev4522@gmail.com</li>
+		<li class="demo">keshavsingh.cse21@jecrc.com.in</li>
+		<li>keshavsingh4522@yahoo.com</li>
+	</ul>
+	<ul class="select_email_2">
+		<li>keshavsingh4522@gmail.com</li>
+		<li>keshavsingh3197@gmail.com</li>
+		<li class="demo">keshavdev4522@gmail.com</li>
+		<li class="demo">keshavsingh.cse21@jecrc.com.in</li>
+		<li>keshavsingh4522@yahoo.com</li>
+	</ul>
+<script>
+	$(document).ready(function(){
+		$(".select_email").sortable({
+		// items:'.demo',
+		// cancel:'.demo',
+		revert:true,
+		connectWith:'ul',
+		dropOnEmpty:false,
+		placeholder:'shadow_1',
+	    });
+	    $(".select_email_2").sortable({
+	    	revert:true,
+	    	connectWith:'ul',
+	    	placeholder:'shadow_2',
+	    });
+	});
+</script>
+</body>
+</html>
