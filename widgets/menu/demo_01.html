@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		ul
+		{
+			width: 150px;
+		}
+		li a
+		{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<!-- menu -->
+	<ul>
+		<li><div><a href="#"><span class="ui-icon ui-icon-home"></span>Home</a></div></li>
+		<li><div><a href="#"><span class="ui-icon ui-icon-image"></span>Images</a></div>
+			<!-- dropdown menu -->
+			<ul>
+				<li><div><a href="#">Actor</a></div></li>
+				<li><div><a href="#">Actress</a></div></li>
+				<li><div><a href="#">God</a></div></li>
+				<li><div><a href="#">Goddess</a></div></li>
+				<li><div><a href="#">Other</a></div></li>
+			</ul>
+		</li>
+		<li><div><a href="#"><span class="ui-icon ui-icon-about"></span>About us</a></div></li>
+		<li><div><a href="#"><span class="ui-icon ui-icon-contact"></span>Contact us</a></div></li>
+		<li><div><a href="#"><span class="ui-icon ui-icon-video"></span>Videos</a></div></li>
+		<li><div><a href="#"><span class="ui-icon ui-icon-audios"></span>Audios</a></div></li>
+	</ul>
+<script>
+	$(document).ready(function(){
+		$("ul").menu();
+	});
+</script>
+
+</body>
+</html>
