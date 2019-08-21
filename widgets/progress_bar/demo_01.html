@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		.con
+		{
+			position: relative;
+			width: 780px;
+			margin: 100px auto;
+		}
+		.label
+		{
+			position: absolute;
+			left: 40%;
+			top:5px;
+			font-weight: bold;
+			box-shadow: 0px 3px 4px #eeeeee;
+		}
+	</style>
+</head>
+<body>
+<div class="con">
+	<div class="label">Downloading...</div>
+</div>
+<script>
+	$(document).ready(function(){
+		var mainbox=$('.con');
+		var label=$('.label');
+		mainbox.progressbar({
+			value:false,
+			change:function(){
+				label.text('Downloading: '+mainbox.progressbar('value')+'%');
+			},
+			complete:function(){
+				label.text('Downloading Completed');
+			},
+		});
+		function anim(){
+			var val=mainbox.progressbar('value')||0;
+			mainbox.progressbar('value',val+2);//for one property and value
+			if(val<99)
+			{
+				setTimeout(anim,80);
+			}
+		}
+		setTimeout(anim,2000);
+	});
+</script>
+
+</body>
+</html>
