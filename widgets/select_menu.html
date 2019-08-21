@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		ul
+		{
+			width: 150px;
+		}
+		li a
+		{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<select>
+		<optgroup label="Degree Course">
+			<option name="bca">BCA</option>
+			<option name="mca">MCA</option>
+			<option name="dit">DIT</option>
+	    </optgroup>
+	    <optgroup label="Certification Course">
+			<option name="python">PYTHON</option>
+			<option name="javascript" selected="selected">JAVASCRIPT</option>
+			<option name="django">DJANGO</option>
+	    </optgroup>
+	    <output>keshav</output>
+	</select>
+<script>
+	$(document).ready(function(){
+		$("select").selectmenu({
+			icons:{button:'ui-icon-signal-diag'},
+		});
+	});
+</script>
+
+</body>
+</html>
