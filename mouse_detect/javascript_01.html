@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<button onmouseup="demo(event)">click here</button>
+<script>
+
+		function demo(x)
+		{
+			if(x.which)
+			{
+				switch(x.which)
+				{
+					case 1: alert('left button');
+					        break;
+					case 2: alert('middle button');
+					        break;
+					case 3: alert('right button');
+					        break;
+					default: alert('invalid button');
+					        break;
+				}
+			}
+			else
+			{
+				switch(x.button)
+				{
+					case 1: alert('left button');
+					        break;
+					case 4: alert('middle button');
+					        break;
+					case 2: alert('right button');
+					        break;
+					default: alert('invalid button');
+					        break;
+				}
+			}
+		}
+</script>
+
+</body>
+</html>
