@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<button onmouseup="demo(event)">click here</button>
+<script>
+	$(document).ready(function(){
+		$('button').mouseup(function(event){
+			switch(event.which)
+			{
+				    case 1: alert('left button');
+					        break;
+					case 2: alert('middle button');
+					        break;
+					case 3: alert('right button');
+					        break;
+					default: alert('invalid button');
+			}
+		});
+	});
+</script>
+
+</body>
+</html>
