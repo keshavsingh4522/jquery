@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		#ui-datepicker-div,.ui-datepicker-header
+		{
+			border:1px solid #ddd;
+			border-radius:25px;
+		}
+		.ui-corner-all
+		{
+			background-color: #532222;
+		}
+		.ui-datepicker-title
+		{
+			background-color: purple;
+			border-radius: 25px;
+			color: white;
+		}
+		.ui-datepicker-next,.ui-datepicker-prev
+		{
+			background-color: green;
+			border-radius: 25px;
+		}
+		table.ui-datepicker-calendar
+		{
+			border:1px solid #ddd;
+			border-radius: 25px !important;
+		}
+		.ui-state-default
+		{
+			border-radius: 25px;
+			display: flex !important;
+			justify-content: center !important;
+			align-items: center !important;
+			padding:5px;
+			background-color: black !important;
+			color: white !important;
+			margin:4px;
+			padding: 4px;
+		}
+		.ui-state-default:hover
+		{
+			background-color: violet !important;
+		}/*
+		.ui-datepicker-month
+		.ui-datepicker-year*/
+		th{
+			background-color: gold;
+			border-radius: 25px;
+		}
+		th.ui-datepicker-week-end
+		{
+			background-color: red;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<!--1. date format -->
+		<input type="text" name="date" class="date" placeholder="mm/dd/yyyy"><br><br><br>
+	<!--2. to understand other -->
+	<input type="text" name="date_2" class="date_2">
+	<input type="text" name="next" class="next"><br><br><br>
+	<!-- 3. restriction on date selection -->
+	<input type="text" name="date_3" class="date_3">
+	<input type="text" name="date_4" class="date_4">
+<script>
+	$(document).ready(function(){
+		// 1.
+		$(".date").datepicker({
+			// dateFormat:'d*m*y',
+			// dateFormat:'dd-mm-yy',
+			// dateFormat:'DD, dd MM yy',
+			dateFormat:'D, dd M yy',
+			// dateFormat:'dddd*mmmm*yyyy',
+			// dateFormat:'ddd*mm*y',
+		});
+
+		// 2.
+		$(".date_2").datepicker({
+			dateFormat:'dd-mm-yy',
+			altField:'.next',
+			altFormat:'DD, dd MM yy',
+		});
+
+		// 3.
+		$(".date_3").datepicker({
+			minDate:-2,
+			maxDate:2,
+		});
+		$(".date_4").datepicker({
+			minDate:new Date('2019-08-20'),
+			maxDate:new Date('2019-08-22'),
+		});
+	});
+</script>
+
+</body>
+</html>
