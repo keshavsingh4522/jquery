@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+<fieldset>
+	<legend>Choose any one</legend>
+	<label for="india">India</label>
+	<input type="radio" name="country" value="india" id="india">
+	<label for="srilanka">Srilanka</label>
+	<input type="radio" name="country" value="srilanka" id="srilanka">
+	<button class="btn">check result</button>
+	<p class="show"></p>
+</fieldset>
+<script>
+	$(document).ready(function(){
+		$('input[type="radio"]').checkboxradio();
+		var l;
+		$('.btn').click(function(){
+			l=$('input[type="radio"]:checked');
+			if(l.length>0)
+			{
+				$('.show').html(l.val());
+			}
+			else
+			{
+				$('.show').html("you haven't selected yet");
+			}
+		});
+	});
+</script>
+
+</body>
+</html>
