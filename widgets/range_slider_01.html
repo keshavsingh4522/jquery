@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="https://keshavsingh.ml/css/animate.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+	  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+
+	<style type="text/css">
+		*
+		{
+			box-sizing: border-box;
+		}
+		/*predifined*/
+		#slider .ui-slider-range
+		{
+			background-color: rgba(34,123,220);
+		}
+		#slider .ui-slider-handle
+		{
+			background-color: violet;
+		}
+		#slider .ui-slider-handle:active
+		{
+			background-color: gold;
+		}
+	</style>
+</head>
+<body>
+	<!-- simple slider -->
+<input type="range" min="0" max="100" name="slider">
+<!-- in jquery ui slider -->
+<div id="slider">
+	
+</div>
+<script>
+	$(document).ready(function(){
+		$('#slider').slider({
+			min:0,
+			max:100,
+			value:50,
+			range:'min',
+		});
+	});
+</script>
+
+</body>
+</html>
