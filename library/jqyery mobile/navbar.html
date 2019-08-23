@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title></title>
+
+	     <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      
+
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <style type="text/css">
+      	.ui-footer .ui-btn
+      	{
+      		padding: 12px !important;
+      		background-color: inherit !important;
+      		-webkit-transform: scale(2);
+      		-moz-transform: scale(2);
+      		-o-transform: scale(2);
+      		transform: scale(2);
+      		border:none !important;
+      	}
+      	.ui-footer .ui-btn:focus
+      	{
+      		box-shadow: none !important;
+      	}
+      	.ui-footer .ui-btn-active
+      	{
+      		background-color: #333 !important;
+      	}
+      	.ui-footer
+      	{
+      		padding:22px !important;
+      	}
+      </style>
+</head>
+<body>
+  <!-- 1st page -->
+<div data-role="page" id="home">
+	<div data-role="header" data-theme="b">
+		<h1>Header</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<p>
+			hi how are you
+		</p>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar" data-iconpos="notext" align="center" data-grid="b">
+			<ul>
+				<li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+				<li><a href="#menu" data-icon="grid">Menu</a></li>
+				<li><a href="#next" data-icon="arrow-r">Next</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 2nd page -->
+<div data-role="page" id="menu">
+	<div data-role="header" data-theme="b">
+		<h1>Header</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<p>
+			welcome to menu
+		</p>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar" data-iconpos="notext" align="center" data-grid="b">
+			<ul>
+				<li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+				<li><a href="#menu" data-icon="grid">Menu</a></li>
+				<li><a href="#next" data-icon="arrow-r">Next</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 3rd page -->
+<div data-role="page" id="next">
+	<div data-role="header" data-theme="b">
+		<h1>Header</h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<p>
+			welcome to next page
+		</p>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar" data-iconpos="notext" align="center" data-grid="b">
+			<ul>
+				<li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+				<li><a href="#menu" data-icon="grid">Menu</a></li>
+				<li><a href="#next" data-icon="arrow-r">Next</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>
