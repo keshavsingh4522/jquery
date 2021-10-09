@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Using Jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- <style>
+	#dynamicTable{
+		th{
+
+		}
+	}
+</style>
+ -->
+</head>
+<body>
+<div id="dynamicTable">
+</div>
+
+ 	
+ </body>
+</html>
+
+<script>
+	  $(document).ready(function(){
+            $("#dynamicTable").append("<table");
+            $("#dynamicTable").append("<caption>My table</caption>");
+            $("#dynamicTable").append("<thead>");
+            $("#dynamicTable").append("<tr>");
+            $("#dynamicTable").append("<th> A </th>");
+            $("#dynamicTable").append("<th> B </th>");
+            $("#dynamicTable").append("<th> C </th>");
+            $("#dynamicTable").append("</tr>");
+            $("#dynamicTable").append("</thead>");
+           
+            $("#dynamicTable").append("<tbody>");
+
+            $("#dynamicTable").append("<tr>");
+            $("#dynamicTable").append("<td> ABC </td>");
+            $("#dynamicTable").append("<td> PQR </td>");
+            $("#dynamicTable").append("<td> XYZ </td>");
+            $("#dynamicTable").append("</tr>");
+
+            $("#dynamicTable").append("<tr>");
+            $("#dynamicTable").append("<td>demo</td>");
+            $("#dynamicTable").append("<td>demo</td>");
+            $("#dynamicTable").append("<td>dang</td>");
+            $("#dynamicTable").append("</tr>");
+
+            $("#dynamicTable").append("</tbody>");
+            $("#dynamicTable").append("</table>");
+
+            $('#dynamicTable table').addClass("dynamicTable");
+            $('#dynamicTable table thead').addClass("dynamicTableTh");
+            $('#dynamicTable table tbody td').addClass("dynamicTableTd");
+        });
+</script>

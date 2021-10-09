@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Validation for Login</title>
+		<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<style>
+
+	label{
+		font-style: bold;
+		font-family: 'Times New Roman';
+		font-size: 20px;
+
+	}
+
+	input[type="text"]
+	{
+		font-family: 'Times New Roman';
+		font-size: 15px;
+	}
+</style>
+
+</head>
+<body>
+<form action="jqueryValidation.html">
+	Form Validation using Jquery<br><br>
+
+<label>Username</label>
+<input type="text" name="username" id="user">
+<div id="userval"></div>
+<br>
+
+<label>Password</label>
+
+<input type="password" name="password" id="pwd"><br><br>
+<div id="pwdval"></div>
+<button type="submit" name="submit" id="submit">Submit
+	
+</button>
+
+
+</form>
+
+
+
+</body>
+</html>
+
+
+
+<script>
+	
+$(document).ready(function(){
+	$('#submit').click(function(){
+        var user = $('#user').val();  
+        if (user == ""){
+        	$('#userval').html('<h4>The Username must be filled</h4>');
+        	$('#userval').css('color','red');
+        	return false;
+        }   
+
+        var pass = $('#pwd').val();
+        if((pass == "") || (pass == "1234")){
+        	$('#pwdval').html('<h4>Please Enter Valid Password</h4>');
+        	$('#pwdval').css('color','red');
+        	return false;
+        }  
+
+	});
+});
+
+
+</script>
