@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery Validation for Forms</title>
+		<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<style>
+
+	label{
+		font-style: bold;
+		font-family: 'Times New Roman';
+		font-size: 20px;
+
+	}
+
+	input[type="text"]
+	{
+		font-family: 'Times New Roman';
+		font-size: 15px;
+	}
+</style>
+
+</head>
+<body>
+<form action="index.html">
+	Form Validation using Jquery<br><br>
+
+<label>Username</label>
+<input type="text" name="username" id="user" autocomplete="off">
+<div id="userval"></div>
+<br><br>
+
+<label>Password</label>
+
+<input type="password" name="password" id="pwd"><br><br>
+<div id="pwdval"></div>
+<button type="submit" name="submit" id="submit">Submit
+	
+</button>
+
+
+</form>
+
+
+
+</body>
+</html>
+
+
+
+<script>
+	
+$(document).ready(function(){
+
+	$('#userval').hide();
+	$('#pwdval').hide();
+
+	var user_error = true;
+	var pass_error = true;
+
+	$('#user').keyup(function(){
+		username_check();
+	});
+
+	  function username_check(){
+	  	var user_val = $('#user').val();
+	  	
+	  	if(user_val.length == ''){
+	  		$('#userval').show();
+	  		$('#userval').html("<b>Please Enter Valid Username</b>");
+	  		$('#userval').focus();
+	  		$('#userval').css("color","red");
+
+	  		user_error = false;
+	  		return false;
+	  	}else{
+	  		$('#userval').hide();
+	  	}
+	  }
+
+
+	$('#pwd').keyup(function(){
+		password_check();
+	});
+
+	  function password_check(){
+	  	
+	  	var pass_val = $('#pwd').val();
+	  if((pass_val.length == '') || (pass.val == '1234')){
+	  		$('#pwdval').show();
+	  		$('#pwdval').html("<b>Please Enter Valid Password</b>");
+	  		$('#pwdval').focus();
+	  		$('#pwdval').css("color","red");
+
+	  		pass_error = false;
+	  		return false;
+	  	}else{
+	  		$('#pwdval').hide();
+	  	}
+	  }
+
+
+
+	  $('#submit').click(function(){
+
+	  	user_error = true;
+	  	pass_error = true;
+
+	  	username_check();
+	  	password_check();
+
+	  	if((user_error == true) && (pass_error == true))
+	  	{
+	  		return true;
+	  	} else
+	  	{
+	  		return false;
+	  	}
+
+
+	  });
+});
+
+
+</script>
